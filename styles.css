@@ -621,6 +621,7 @@ PRICING
 .plans {
   display: flex;
   justify-content: space-between;
+  position: relative;
   width: 100%;
   z-index: 100;
 }
@@ -649,24 +650,12 @@ PRICING
   height: 8px;
 }
 
-.plan:nth-child(1) .plan__stripe,
-.plan:nth-child(1) .plan__btn {
-  color: #f7fafc;
-  background: linear-gradient(115deg, rgb(56, 178, 172) 0%, rgb(129, 230, 217) 100%);
-}
-
 .plan__top,
 .plan__middle,
 .plan__bottom {
   padding: 32px;
   text-align: center;
   width: 100%;
-}
-
-.plan:nth-child(1) .plan__middle,
-.plan:nth-child(3) .plan__middle {
-  border-top: 2px solid #e5e7eb;
-  border-bottom: 2px solid #e5e7eb;
 }
 
 .plan__top {
@@ -693,4 +682,220 @@ PRICING
   width: 100%;
   max-width: 192px;
   transition: all 300ms;
+}
+
+.plan__name,
+.plan__price,
+.plan__duration {
+  font-weight: 700;
+  line-height: 1.625;
+}
+
+.plan__name {
+  font-size: 20px;
+}
+
+.plan__price {
+  font-size: 48px;
+  margin: 4px 0;
+}
+
+.plan__duration {
+  font-size: 16px;
+  letter-spacing: 0.1em;
+}
+
+.plan__target {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0.025em;
+}
+
+.plan__feature {
+  margin-top: 20px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.plan:nth-child(1) .plan__stripe,
+.plan:nth-child(1) .plan__btn {
+  color: #f7fafc;
+  background: linear-gradient(115deg, rgb(56, 178, 172) 0%, rgb(129, 230, 217) 100%);
+}
+
+.plan:nth-child(1) .plan__middle,
+.plan:nth-child(3) .plan__middle {
+  border-top: 2px solid #e5e7eb;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.plan:nth-child(odd) .plan__name,
+.plan:nth-child(odd) .plan__price,
+.plan:nth-child(odd) .plan__target {
+  color: #1a202c;
+}
+
+.plan:nth-child(odd) .plan__duration,
+.plan:nth-child(odd) .plan__feature {
+  color: #718096;
+}
+
+.plan:nth-child(2) {
+  background: linear-gradient(135deg, rgb(76, 81, 191), rgb(102, 126, 234) 100%);
+}
+
+.plan:nth-child(2) .plan__stripe {
+  visibility: hidden;
+}
+
+.plan:nth-child(2) .plan__name,
+.plan:nth-child(2) .plan__price,
+.plan:nth-child(2) .plan__target,
+.plan:nth-child(2) .plan__duration,
+.plan:nth-child(2) .plan__feature {
+  color: #f7fafc;
+}
+
+.plan:nth-child(2) .plan__middle {
+  border-top: 2px solid rgb(102, 126, 234);
+  border-bottom: 2px solid rgb(102, 126, 234);
+}
+
+.plan:nth-child(2) .plan__btn {
+  color: #6415ff;
+  background-color: #f7fafc;
+}
+
+.plan:nth-child(3) .plan__stripe,
+.plan:nth-child(3) .plan__btn {
+  color: #f7fafc;
+  background: linear-gradient(115deg, rgb(245, 101, 101), rgb(254, 178, 178) 100%);
+}
+
+.plans__blob {
+  position: absolute;
+  z-index: -10;
+  bottom: 0;
+  left: 0;
+  width: 256px;
+  height: 256px;
+  transform: translate(-50%, 50%) scaleX(1);
+  opacity: 0.25;
+}
+
+/*
+
+TESTIMONIALS 
+
+*/
+
+#testimonials .row {
+  display: flex;
+  align-items: center;
+}
+
+.testimonials__img--wrapper,
+.testimonials__description {
+  width: 50%;
+}
+
+.testimonials__description {
+  padding-left: 64px;
+}
+
+#testimonials .section__title {
+  margin-bottom: 24px;
+  line-height: 1.25;
+}
+
+.testimonial {
+  margin-top: 40px;
+}
+
+.testimonial__rating i {
+  color: rgb(246, 173, 85);
+  margin: 4px 2px 0 0;
+}
+
+.testimonial__title {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.5;
+  color: #243e63;
+  margin-top: 16px;
+}
+
+.testimonial__para {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.625;
+  color: #4a5568;
+  margin: 16px 0 40px 0;
+}
+
+.testimonial__bottom {
+  display: flex;
+  justify-content: space-between;
+}
+
+.testimonial__profile {
+  display: flex;
+  align-items: center;
+}
+
+.testimonial__img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+
+.testimonial__details {
+  margin-left: 24px;
+}
+
+.testimonial__name {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.5;
+  color: #243e63;
+}
+
+.testimonial__role {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: #7c8ba1;
+}
+
+.testimonial__btns {
+  display: flex;
+  align-items: center;
+}
+
+.testimonial__btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+  margin: 0 12px;
+  border-radius: 50%;
+  background-color: #edf2f7;
+  transition: background-color 300ms ease;
+}
+
+.testimonial__btn:hover {
+  background-color: rgb(226, 232, 240);
+}
+
+.testimonial__btn svg {
+  width: 16px;
+  height: 16px;
+}
+
+.divider {
+  width: 1px;
+  height: 24px;
+  background: rgb(229, 231, 235);
 }
