@@ -1830,7 +1830,7 @@ footer {
   }
 
   .footer__columns {
-    justify-content: center;
+    justify-content: space-around;
   }
 
   .footer__column {
