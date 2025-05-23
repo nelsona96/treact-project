@@ -131,6 +131,7 @@ nav {
 .nav__row {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .nav__logo {
@@ -220,6 +221,191 @@ nav {
 .nav__link--primary:after {
   content: "";
   visibility: hidden;
+}
+
+/* 
+
+BURGER BUTTON
+
+*/
+
+button {
+  background-color: transparent;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.button__container {
+  display: none;
+  position: relative;
+  width: 30px;
+  height: 30px;
+  z-index: 100;
+}
+
+.burger__inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 30px;
+}
+
+.menu--open .burger__inner {
+  justify-content: center;
+}
+
+.burger__btn,
+.close__btn {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.burger__btn {
+  visibility: visible;
+}
+
+.menu--open .button__container {
+  position: fixed;
+  right: 32px;
+}
+
+.menu--open .burger__btn {
+  visibility: hidden;
+}
+
+.close__btn {
+  visibility: hidden;
+}
+
+.menu--open .close__btn {
+  visibility: visible;
+}
+
+/* 
+
+BURGER INGREDIENTS
+
+*/
+
+.ingredient__container {
+  position: relative;
+  height: calc(100% / 3);
+}
+
+.top-bun,
+.patty,
+.bottom-bun {
+  position: absolute;
+  background-color: #1a202c;
+  width: 100%;
+  height: 30%;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 100px;
+  transition: background-color 300ms ease;
+}
+
+.burger:hover .top-bun,
+.burger:hover .patty,
+.burger:hover .bottom-bun {
+  background-color: #6415ff;
+}
+
+.top-bun,
+.bottom-bun {
+  left: 0;
+}
+
+.top {
+  transform: translateY(0) rotate(0);
+  transition: transform 300ms ease;
+  will-change: transform;
+}
+
+.menu--open .top {
+  transform: translateY(100%) rotate(-225deg);
+}
+
+.patty {
+  right: 0;
+  opacity: 1;
+  transition: width 200ms ease-out, opacity 30ms ease-out 45ms,
+    background-color 300ms ease;
+  will-change: width;
+}
+
+.menu--open .patty {
+  width: 0;
+  opacity: 0;
+  transition: width 200ms ease-out, opacity 30ms ease-in 45ms;
+}
+
+.bottom {
+  transform: translateY(0) rotate(0);
+  transition: transform 300ms ease;
+  will-change: transform;
+}
+
+.menu--open .bottom {
+  transform: translateY(-100%) rotate(225deg);
+}
+
+/* 
+
+MODAL 
+
+*/
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 378px;
+  margin: 24px 16px;
+  padding: 32px;
+  background-color: #fff;
+  border: 1px solid rgb(229, 231, 235);
+  border-radius: 8px;
+  z-index: 10;
+  transform: translateX(300%);
+  transition: transform 300ms;
+}
+
+.modal__links {
+  width: 100%;
+  height: 100%;
+  padding-bottom: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal__link {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.5;
+  margin: 12px 0;
+  color: #1a202c;
+}
+
+.modal__link--primary {
+  color: #f7fafc;
+  background-color: #6415ff;
+  padding: 8px 28px;
+  border-radius: 500px;
+  transition: background-color 300ms ease;
+}
+
+.modal__link--primary:hover {
+  background-color: #4c00e1;
+}
+
+.menu--open .modal {
+  transform: translateX(0);
 }
 
 /*
@@ -442,7 +628,7 @@ QUALITY
 #quality .section__title {
   line-height: 1.25;
   max-width: 500px;
-  margin-bottom: 32px;;
+  margin-bottom: 32px;
 }
 
 .quality__img--wrapper {
@@ -1208,7 +1394,6 @@ footer {
   opacity: 0.5;
 }
 
-
 /* LAPTOPS AND SMALLER COMPUTER SCREENS */
 @media (max-width: 1280px) {
   header .row {
@@ -1265,9 +1450,13 @@ footer {
   #landing .container {
     padding-top: 24px;
   }
-  
+
   .nav__links {
     display: none;
+  }
+
+  .button__container {
+    display: flex;
   }
 
   header .row {
@@ -1286,7 +1475,6 @@ footer {
     align-items: center;
     flex-direction: column;
     text-align: center;
-
   }
 
   h1 {
@@ -1320,7 +1508,7 @@ footer {
   }
 
   .feature__row {
-    margin: 0 16px
+    margin: 0 16px;
   }
 
   .feature__para {
@@ -1400,7 +1588,7 @@ footer {
   .section__title {
     font-size: 36px;
   }
-  
+
   #features .section__title {
     font-size: 40px;
   }
@@ -1495,18 +1683,10 @@ footer {
   .footer__socials {
     margin-top: 32px;
   }
-  
+
   .footer__socials,
   .footer__social--link:first-child {
     margin-left: 0;
-  }
-}
-
-/* TESTIMONIALS TITLE LINE BREAK */
-@media (max-width: 704px) {
-  #testimonials .section__title {
-    display: flex;
-    flex-direction: column;
   }
 }
 
@@ -1543,7 +1723,12 @@ footer {
     letter-spacing: 0.05em;
   }
 
-  #features .section__title {
+  .header__blob {
+    transform: matrix(1, 0, 0, 1, -190, 120);
+  }
+
+  #features .section__title,
+  #pricing .section__title {
     font-size: 36px;
   }
 
@@ -1572,6 +1757,10 @@ footer {
 
   .steps__list {
     margin-top: 48px;
+  }
+
+  .features__blob {
+    transform: translateX(120px) translateY(240px) scaleX(1) scaleY(0.9);
   }
 
   .btn {

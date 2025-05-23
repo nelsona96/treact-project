@@ -4,7 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Treact</title>
-    <link rel="icon" type="image/x-icon" href="assets/logo.2c489fc453a1783cbadacf914efa3df6.svg">
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="assets/logo.2c489fc453a1783cbadacf914efa3df6.svg"
+    />
     <link rel="stylesheet" href="styles.css" />
     <script src="index.js"></script>
     <script
@@ -32,9 +36,47 @@
             <a href="#" class="nav__link login">Login</a>
             <a href="#" class="nav__link nav__link--primary">Sign Up</a>
           </div>
+          <div class="button__container">
+            <button class="burger__btn burger" onclick="openMenu()">
+              <div class="burger__inner">
+                <div class="ingredient__container top">
+                  <div class="top-bun"></div>
+                </div>
+                <div class="ingredient__container middle">
+                  <div class="patty"></div>
+                </div>
+                <div class="ingredient__container bottom">
+                  <div class="bottom-bun"></div>
+                </div>
+              </div>
+            </button>
+            <button class="close__btn" onclick="closeMenu()">
+              <div class="burger__inner">
+                <div class="ingredient__container top">
+                  <div class="top-bun"></div>
+                </div>
+                <div class="ingredient__container middle">
+                  <div class="patty"></div>
+                </div>
+                <div class="ingredient__container bottom">
+                  <div class="bottom-bun"></div>
+                </div>
+              </div>
+            </button>
+          </div>
         </div>
       </nav>
-      <header>
+      <div class="modal">
+        <div class="modal__links">
+          <a class="modal__link" onclick="closeMenu()">About</a>
+          <a class="modal__link" onclick="closeMenu()">Blog</a>
+          <a class="modal__link" onclick="closeMenu()">Pricing</a>
+          <a class="modal__link" onclick="closeMenu()">Contact Us</a>
+          <a class="modal__link" onclick="closeMenu()">Login</a>
+          <a class="modal__link modal__link--primary" onclick="closeMenu()">Sign Up</a>
+        </div>
+      </div>
+      <header onclick="closeMenu()">
         <div class="container">
           <div class="row">
             <div class="header__description">
@@ -85,7 +127,7 @@
         </svg>
       </header>
     </section>
-    <main>
+    <main onclick="closeMenu()">
       <section id="features">
         <div class="container">
           <div class="row__narrow">
@@ -606,7 +648,7 @@
         </div>
       </section>
     </main>
-    <footer>
+    <footer onclick="closeMenu()">
       <svg viewBox="0 0 600 600" class="footer__blob--1">
         <g transform="translate(300,300)">
           <path
