@@ -1262,6 +1262,10 @@ footer {
 
 /* SMALLER LAPTOPS, COMPUTERS, AND TABLETS */
 @media (max-width: 1024px) {
+  #landing .container {
+    padding-top: 24px;
+  }
+  
   .nav__links {
     display: none;
   }
@@ -1481,7 +1485,6 @@ footer {
 
   .footer__column {
     width: calc(100% / 3);
-    align-items: center;
   }
 
   .footer__bottom {
@@ -1507,3 +1510,148 @@ footer {
   }
 }
 
+@media (max-width: 640px) {
+  .container {
+    padding: 80px 0;
+  }
+
+  .section__title {
+    line-height: 1.25;
+    font-size: 32px;
+  }
+
+  .header__email {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .header__email--input {
+    position: static;
+    padding: 16px 0;
+    padding-left: 32px;
+  }
+
+  .header__email--btn {
+    width: 100%;
+    padding: 16px 0;
+    margin-top: 16px;
+    line-height: 1.5;
+  }
+
+  .header__customers--title {
+    font-size: 14px;
+    letter-spacing: 0.05em;
+  }
+
+  #features .section__title {
+    font-size: 36px;
+  }
+
+  .feature__row {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .feature__title {
+    letter-spacing: 0.025em;
+  }
+
+  .feature__text {
+    margin-top: 16px;
+    margin-left: 0;
+  }
+
+  .feature__para {
+    margin-top: 4px;
+  }
+
+  #steps .section__title {
+    margin: 16px 0 0 0;
+  }
+
+  .steps__list {
+    margin-top: 48px;
+  }
+
+  .btn {
+    line-height: 1.5;
+  }
+
+  .plan__price {
+    font-size: 36px;
+  }
+
+  .testimonial__para {
+    margin-bottom: 32px;
+  }
+
+  .testimonial__bottom {
+    flex-direction: column;
+    align-items: center;
+    padding-top: 4px;
+  }
+
+  .testimonial__profile {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .testimonial__details {
+    margin-left: 0;
+    margin-top: 8px;
+  }
+
+  .testimonial__img {
+    height: 64px;
+    width: 64px;
+  }
+
+  .testimonial__btns {
+    margin-top: 32px;
+  }
+
+  .start__title {
+    font-size: 28px;
+  }
+
+  .start__container {
+    padding: 80px 0;
+  }
+
+  .start__btns {
+    flex-direction: column;
+  }
+
+  .start__btn:nth-child(1) {
+    margin-right: 0;
+  }
+
+  .start__btn {
+    padding: 12px 24px;
+  }
+
+  .start__btn:nth-child(2) {
+    margin-top: 16px;
+  }
+
+  main {
+    margin-bottom: 80px;
+  }
+
+  .footer__columns {
+    justify-content: center;
+  }
+
+  .footer__column {
+    width: auto;
+    padding: 0 16px;
+    text-align: center;
+    align-items: center;
+  }
+
+  .footer__copyright {
+    font-size: 14px;
+    text-align: center;
+  }
+}
